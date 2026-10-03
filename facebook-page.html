@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZEU Perfumes | Facebook Page</title>
+  <style>
+    :root {
+      --bg: #f2f3f5;
+      --card: #ffffff;
+      --text: #1c1e21;
+      --muted: #65676b;
+      --gold: #d8af6f;
+      --gold-2: #b88a44;
+      --border: #e5e7eb;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: linear-gradient(135deg, #f8efe0, #f4f6fa);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 18px 50px;
+    }
+
+    .fb-shell {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .cover {
+      height: 280px;
+      background:
+        linear-gradient(90deg, rgba(216,175,111,0.95), rgba(184,138,68,0.85), rgba(9,9,15,0.95));
+      position: relative;
+    }
+
+    .cover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("images/069b760e-306e-435a-83b0-6a69467166b8.png") center/cover no-repeat;
+      opacity: 0.16;
+      mix-blend-mode: screen;
+    }
+
+    .profile-wrap {
+      padding: 0 24px 20px;
+      margin-top: -44px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .profile {
+      display: flex;
+      align-items: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .profile-main {
+      display: flex;
+      align-items: flex-end;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .profile img {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      border: 5px solid #ffffff;
+      object-fit: cover;
+      background: #fff;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.16);
+    }
+
+    .profile h1 {
+      margin: 0 0 6px;
+      font-size: 1.9rem;
+    }
+
+    .profile p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #111;
+      box-shadow: 0 8px 20px rgba(184,138,68,0.25);
+    }
+
+    .btn-secondary {
+      background: #f2f3f5;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding: 0 24px 24px;
+    }
+
+    .stat-box {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .stat-box strong { display: block; color: var(--gold-2); font-size: 1.1rem; }
+
+    .content {
+      padding: 0 24px 24px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1.3fr 0.9fr;
+      align-items: start;
+    }
+
+    .card {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px;
+    }
+
+    .card h2, .card h3 { margin-top: 0; margin-bottom: 8px; }
+
+    .post {
+      padding: 16px 0 0;
+      border-top: 1px solid var(--border);
+      margin-top: 12px;
+    }
+
+    .post:first-of-type { padding-top: 0; border-top: 0; margin-top: 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .product {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      background: #f7f7f7;
+    }
+
+    .product .price {
+      color: var(--gold-2);
+      font-weight: 700;
+      margin: 6px 0 10px;
+    }
+
+    .tiny { color: var(--muted); font-size: 0.95rem; }
+
+    @media (max-width: 800px) {
+      .content { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .cover { height: 220px; }
+      .profile img { width: 104px; height: 104px; }
+      .profile h1 { font-size: 1.45rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="fb-shell">
+      <div class="cover"></div>
+      <div class="profile-wrap">
+        <div class="profile">
+          <div class="profile-main">
+            <img src="images/8795c2fe-f827-4559-87a7-72eb3ebfd808.png" alt="ZEU perfume brand logo" />
+            <div>
+              <h1>ZEU Perfumes</h1>
+              <p>Luxury fragrance • Premium scents for every mood</p>
+              <div class="actions">
+                <a class="btn btn-primary" href="mailto:info@zeuperfumes.com?subject=Order%20Request%20for%20ZEU%20Perfume">Buy now</a>
+                <a class="btn btn-secondary" href="index.html">Visit Website</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-box">
+          <strong>4 signature scents</strong>
+          <span class="tiny">Crafted for bold, fresh and elegant moods.</span>
+        </div>
+        <div class="stat-box">
+          <strong>24/7 support</strong>
+          <span class="tiny">Fast help for orders and custom requests.</span>
+        </div>
+        <div class="stat-box">
+          <strong>Luxury gifting</strong>
+          <span class="tiny">Perfect for special occasions and premium presents.</span>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="card">
+          <h2>About this page</h2>
+          <p>Welcome to the official ZEU Perfumes page. Discover refined fragrance collections designed to leave a lasting impression and elevate every moment.</p>
+
+          <div class="post">
+            <h3>Featured release</h3>
+            <p class="tiny">Noir Velvet is our boldest expression — rich oud, black rose and smoky amber layered for unforgettable evenings.</p>
+          </div>
+
+          <div class="post">
+            <h3>Why customers love us</h3>
+            <p class="tiny">Elegant packaging, rich longevity and a signature experience that feels personal from the very first spray.</p>
+          </div>
+        </div>
+
+        <div class="card" id="products">
+          <h2>Shop best sellers</h2>
+          <div class="grid">
+            <div class="product">
+              <img src="images/7a420e01-bcb6-480f-9904-edebe3801870.png" alt="Noir Velvet perfume" />
+              <h3>Noir Velvet</h3>
+              <p class="tiny">Velvety oud, black rose and smoky amber.</p>
+              <div class="price">From $129</div>
+              <a class="btn btn-primary" href="mailto:info@zeuperfumes.com?subject=Order%20Noir%20Velvet">Order now</a>
+            </div>
+            <div class="product">
+              <img src="images/0382bb49-3336-4e6c-969b-e61f0a556a98.png" alt="Celeste Bloom perfume" />
+              <h3>Celeste Bloom</h3>
+              <p class="tiny">Fresh neroli and white peony with soft musk.</p>
+              <div class="price">From $119</div>
+              <a class="btn btn-primary" href="mailto:info@zeuperfumes.com?subject=Order%20Celeste%20Bloom">Order now</a>
+            </div>
+            <div class="product">
+              <img src="images/069b760e-306e-435a-83b0-6a69467166b8.png" alt="Golden Hour perfume" />
+              <h3>Golden Hour</h3>
+              <p class="tiny">Saffron, bergamot and warm vanilla notes.</p>
+              <div class="price">From $125</div>
+              <a class="btn btn-primary" href="mailto:info@zeuperfumes.com?subject=Order%20Golden%20Hour">Order now</a>
+            </div>
+            <div class="product">
+              <img src="images/8795c2fe-f827-4559-87a7-72eb3ebfd808.png" alt="ZEU signature bottle" />
+              <h3>ZEU Signature</h3>
+              <p class="tiny">A timeless, refined scent for daily luxury.</p>
+              <div class="price">From $115</div>
+              <a class="btn btn-primary" href="mailto:info@zeuperfumes.com?subject=Order%20ZEU%20Signature">Order now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
